@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar style="background-color: lightblue;">
+    <ion-title>
+      Nota
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home">
+  <ion-card [ngStyle]="{'background-color': notaAgregada.color || 'white'}">
+    <ion-card-header>
+      <ion-card-title>Editar Nota</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Contenido</ion-label>
+        <ion-textarea [(ngModel)]="notaAgregada.content" placeholder="Escribe el contenido aquí"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Color</ion-label>
+        <color-chrome [(color)]="notaAgregada.color"></color-chrome>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="button-group">
+    <ion-button expand="full" (click)="guardarNota()">Guardar</ion-button>
+    <ion-button expand="full" color="medium" (click)="navegarAInicio()">Cancelar</ion-button>
+    <ion-button *ngIf="notaAgregada.id" expand="full" color="danger" (click)="eliminarNota()">Eliminar Nota</ion-button>
+  </div>
+</ion-content>
+
+<style>
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+  }
+</style>

@@ -1,0 +1,7 @@
+{
+  "name": "notas-moviles",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
